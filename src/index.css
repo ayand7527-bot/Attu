@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-matte-black: #080a09;
+    --color-emerald-deep: #123b2c;
+    --color-emerald-dark: #0a231a;
+    --color-emerald-light: #1b533e;
+    --color-gold-antique: #c7a45b;
+    --color-gold-light: #e6cb85;
+    --color-gold-dark: #8f7236;
+    --color-ivory: #f4ebdd;
+    --color-ivory-light: #fbf7f0;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: #080a09;
+    color: #f4ebdd;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+  }
+}
+
+/* Polished Typography System */
+
+/* Main English Headings: Cormorant Garamond */
+.font-heading,
+.font-serif-luxury {
+  font-family: 'Cormorant Garamond', Garamond, 'Didot', 'Bodoni MT', Georgia, serif;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
+}
+
+/* Body Text and Buttons: Inter */
+.font-body,
+.font-sans-inter {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+.font-button {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Subtitles, kickers and section tags (refined Inter uppercase) */
+.font-cinzel-title,
+.font-kicker {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+}
+
+/* Urdu Text: Noto Nastaliq Urdu (Flowing, respectful Nastaliq calligraphy) */
+.font-urdu,
+.font-urdu-calligraphy {
+  font-family: 'Noto Nastaliq Urdu', 'Urdu Typesetting', 'Jameel Noori Nastaleeq', 'Nafees Web Naskh', serif;
+  line-height: 2.65;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-rendering: optimizeLegibility;
+  direction: rtl;
+  unicode-bidi: embed;
+}
+
+/* Arabic Text: Noto Naskh Arabic (Clear, dignified classical Arabic script) */
+.font-arabic {
+  font-family: 'Noto Naskh Arabic', 'Amiri', 'Traditional Arabic', 'Scheherazade New', serif;
+  line-height: 2.2;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-rendering: optimizeLegibility;
+  direction: rtl;
+  unicode-bidi: embed;
+}
+
+/* Custom Islamic Geometric Overlay Backgrounds */
+.bg-islamic-pattern {
+  background-image: radial-gradient(circle at 50% 50%, rgba(199, 164, 91, 0.04) 1px, transparent 1px),
+                    radial-gradient(circle at 0% 0%, rgba(18, 59, 44, 0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 100% 100%, rgba(18, 59, 44, 0.15) 0%, transparent 50%);
+  background-size: 32px 32px, 100% 100%, 100% 100%;
+}
+
+.bg-paper-texture {
+  background-color: #f4ebdd;
+  background-image: radial-gradient(rgba(199, 164, 91, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Subtle Gold Foil Sheen & Gradients */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f8e7be 0%, #c7a45b 50%, #9a7833 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-light-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f4ebdd 40%, #e6cb85 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-gold-gradient {
+  border-image: linear-gradient(to right, #8f7236, #c7a45b, #e6cb85, #c7a45b, #8f7236) 1;
+}
+
+/* Candle flame animations */
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.8));
+  }
+  25% {
+    transform: scale(1.05, 0.95) rotate(1.5deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.9));
+  }
+  50% {
+    transform: scale(0.95, 1.05) rotate(-1deg);
+    opacity: 0.88;
+    filter: drop-shadow(0 0 7px rgba(245, 158, 11, 0.7));
+  }
+  75% {
+    transform: scale(1.02, 0.98) rotate(0.8deg);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.85));
+  }
+}
+
+.animate-flame {
+  animation: flameFlicker 1.8s ease-in-out infinite;
+  transform-origin: 50% 90%;
+}
+
+@keyframes smokeRise {
+  0% {
+    opacity: 0.8;
+    transform: translateY(0) scale(0.8);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translateY(-20px) scale(1.4) rotate(15deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(2) rotate(-20deg);
+  }
+}
+
+.animate-smoke {
+  animation: smokeRise 1.6s ease-out forwards;
+}
+
+/* Shimmer animation */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(230, 203, 133, 0.25), transparent);
+  background-size: 200% 100%;
+  animation: goldShimmer 3.5s infinite;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

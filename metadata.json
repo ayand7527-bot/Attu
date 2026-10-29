@@ -1,0 +1,6 @@
+{
+  "name": "Attu's Birthday Surprise",
+  "description": "A luxury Islamic-inspired birthday celebration website for Attiya (Attu), featuring Arabic calligraphy, Urdu birthday letter, interactive gift box, emerald cake, and heartfelt duas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
